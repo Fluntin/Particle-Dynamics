@@ -1,5 +1,3 @@
-# Particle-Dynamics
-
 # Stadium Structure Design Project
 
 ## Background
