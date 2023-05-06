@@ -1,5 +1,8 @@
 # Stadium Structure Design Project
 
+## Overleaf
+https://www.overleaf.com/1768279726hwctqzdbyjbx
+
 ## Background
 When designing stadium structures, it is important to understand and control the dynamic loads that can occur due to crowd-induced vibrations. For example, during Bruce Springsteen's concert at Ullevi Stadium in Gothenburg on June 8, 1985, the rhythmic movement of the crowd caused the soft ground beneath the stadium, made of Gothenburg clay, to undergo self-excited vibration, resulting in structural damage totaling over 36 million SEK.
 
