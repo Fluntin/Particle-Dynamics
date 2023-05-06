@@ -1,4 +1,4 @@
-# Stadium Structure Design Project
+# Stadium Structure & Dynamic Loads - Project
 
 ## Overleaf
 https://www.overleaf.com/1768279726hwctqzdbyjbx
