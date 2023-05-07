@@ -4,8 +4,10 @@
 https://www.overleaf.com/1768279726hwctqzdbyjbx
 
 ## YouTube
+Understanding Vibration and Resonance:
 https://www.youtube.com/watch?v=vLaFAKnaRJU&ab_channel=TheEfficientEngineer
 
+Understanding Vibration and Resonance:
 https://www.youtube.com/watch?v=9_d8CQrCYUw&ab_channel=MITOpenCourseWare
 
 ## Background
