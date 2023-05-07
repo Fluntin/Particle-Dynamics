@@ -10,6 +10,12 @@ https://www.youtube.com/watch?v=vLaFAKnaRJU&ab_channel=TheEfficientEngineer
 Introduction to Mechanical Vibration:
 https://www.youtube.com/watch?v=9_d8CQrCYUw&ab_channel=MITOpenCourseWare
 
+Stadium collapses as Vitesse fans celebrate victory:
+https://www.youtube.com/watch?v=Q5TArPeNB6o&ab_channel=WeShowFootball
+
+Why the Tacoma Narrows Bridge Collapsed:
+https://www.youtube.com/watch?v=mXTSnZgrfxM&ab_channel=PracticalEngineering
+
 ## Background
 When designing stadium structures, it is important to understand and control the dynamic loads that can occur due to crowd-induced vibrations. For example, during Bruce Springsteen's concert at Ullevi Stadium in Gothenburg on June 8, 1985, the rhythmic movement of the crowd caused the soft ground beneath the stadium, made of Gothenburg clay, to undergo self-excited vibration, resulting in structural damage totaling over 36 million SEK.
 
