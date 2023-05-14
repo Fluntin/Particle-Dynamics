@@ -15,8 +15,9 @@ function dynamic_response()
     % Calculate zeta
     zeta=c/((M+m)*2*omega_n);
 
+
     % Calculate the amplitude A and phase angle alpha
-    A = (alpha * m * g) / sqrt((g/delta_0 - omega^2)^2 + (c*omega/(m+M))^2)
+    A = ((alpha * m * g)/(m+M)) / sqrt((g/delta_0 - omega^2)^2 + (c*omega/(m+M))^2)
     %alpha = atan2(2 * zeta * omega_n * omega * A, omega_n^2 - omega^2);
 
     % Calculate the static response K
@@ -31,7 +32,11 @@ function dynamic_response()
     % Plot the dynamic response
     plot(t, y)
     xlabel('Time (s)')
-    ylabel('Displacement (mm)')
+    ylabel('Displacement (m)')
     title('Dynamic Response of the Structure')
+    hold on
+    plot(t, K * ones(size(t)), 'r--')
+    legend('Dynamic Response', 'Static Response')
+    hold off
 end
 
