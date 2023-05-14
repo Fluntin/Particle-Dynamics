@@ -17,7 +17,7 @@ function dynamic_response()
 
 
     % Calculate the amplitude A and phase angle alpha
-    A = ((alpha * m * g)/(m+M)) / sqrt((g/delta_0 - omega^2)^2 + (c*omega/(m+M))^2)
+    A = ((alpha * m * g)/(m+M)) / sqrt((g/delta_0 - omega^2)^2 + (c*omega/(m+M))^2);
     %alpha = atan2(2 * zeta * omega_n * omega * A, omega_n^2 - omega^2);
 
     % Calculate the static response K
