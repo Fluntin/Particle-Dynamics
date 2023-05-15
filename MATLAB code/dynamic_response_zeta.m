@@ -1,4 +1,4 @@
-function dynamic_response()
+function dynamic_response_zeta()
 
     M = 1000; % kg
     m = 75; % kg
@@ -12,13 +12,8 @@ function dynamic_response()
     omega = 2 * pi * f;
     omega_n = sqrt(g / delta_0);
 
-    % Calculate zeta
-    zeta=c/((M+m)*2*omega_n);
-
-
-    % Calculate the amplitude A and phase angle alpha
+    % Calculate the amplitude A
     A = ((alpha * m * g)/(m+M)) / sqrt((g/delta_0 - omega^2)^2 + (c*omega/(m+M))^2);
-    %alpha = atan2(2 * zeta * omega_n * omega * A, omega_n^2 - omega^2);
 
     % Calculate the static response K
     K = delta_0;
@@ -27,17 +22,31 @@ function dynamic_response()
     t = linspace(0, 10, 1000); % 0 to 10 seconds with 1000 points
 
     % Calculate the dynamic response
-    y = K + A * sin(omega * t);
+    y = -K + A * sin(omega * t);
+
+    %----------Plot for the value of k= 6.5651*1.0e+03----------
+    zeta = 0.3734;
+
+    %New A => with the zeta = 0.3734
+    A_new = ((alpha * m * g * delta_0) / ((m + M) * g)) / sqrt((1 - ((omega^2 * delta_0) / g))^2 + ((4 * zeta^2 * omega^2 * delta_0) / g));
+
+    % Calculate new dynamic response
+    y_new = -delta_0 + A_new * sin(omega * t);
+    %----------------------------------------------------------
 
     % Plot the dynamic response
     subplot(2, 1, 1);
     plot(t, y);
+    hold on
+    plot(t, y_new, 'g--');
     xlabel('Time (s)');
     ylabel('Displacement (m)');
     title('Dynamic Response of the Structure');
     hold on
-    plot(t, K * ones(size(t)), 'r--');
-    legend('Dynamic Response', 'Static Response');
+    plot(t, -delta_0 * ones(size(t)), 'r--');
+    hold on
+    plot(t, -delta_0 * ones(size(t)), 'b--');
+    legend('Dynamic Response for old zeta', 'Dynamic Response for new zeta');
     hold off
 
     % Delta range for plotting
@@ -59,6 +68,7 @@ function dynamic_response()
     ylabel('A_{\delta} / \delta_{set}');
     title('Amplitude Ratio vs. Frequency Ratio');
 
+
+
+
 end
-
-
