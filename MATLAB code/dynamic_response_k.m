@@ -25,7 +25,7 @@ function dynamic_response_k()
     y = -K + A * sin(omega * t);
 
     %----------Plot for the value of k= 6.5651*1.0e+03----------
-    k= 0.5410*10^3; %N/m
+    k= 6.5651*10^3; %N/m
     delta_new= (((m+M)*g)/k)*10^(-3);
 
     %New A => with the k= 6.5651*1.0e+03
@@ -39,7 +39,7 @@ function dynamic_response_k()
     subplot(2, 1, 1);
     plot(t, y);
     hold on
-    plot(t, y_new, 'g--');
+    plot(t, y_new, 'g');
     xlabel('Time (s)');
     ylabel('Displacement (m)');
     title('Dynamic Response of the Structure');
@@ -51,23 +51,32 @@ function dynamic_response_k()
     hold off
 
     % Delta range for plotting
-    delta_set = linspace(0.005, 1.5, 1000);
+    delta_set_old_k = linspace(0.005, 1.5, 1000);
+    delta_set_new_k=linspace(0.0016, 1.5, 1000);
 
     % New omega_n
-    omega_new = sqrt(g ./delta_set);
+    omega_new_old_k = sqrt(g ./delta_set_old_k);
+    omega_new_k = sqrt(g ./delta_set_new_k);
 
     % New Amplitude
-    A_delta = ((alpha * m * g) ./ (m + M)) ./ sqrt((g ./ delta_set - omega^2).^2 + (c * omega ./ (m + M)).^2);
+    A_delta_old_k = ((alpha * m * g) ./ (m + M)) ./ sqrt((g ./ delta_set_old_k - omega^2).^2 + (c * omega ./ (m + M)).^2);
+    A_delta_new_k = ((alpha * m * g) ./ (m + M)) ./ sqrt((g ./ delta_set_new_k - omega^2).^2 + (c * omega ./ (m + M)).^2);
 
     % Calculate A_delta/delta_set
-    A_delta_ratio = A_delta ./ delta_set;
+    A_delta_ratio = A_delta_old_k ./ delta_set_old_k;
+    A_delta_ratio_newk = A_delta_new_k ./ delta_set_new_k;
 
     % Plot A_delta/delta_set vs. omega/omega_new
     subplot(2, 1, 2);
-    plot(omega ./ omega_new, A_delta_ratio);
+    plot(omega ./ omega_new_old_k, A_delta_ratio);
+    hold on
+    %---------------------------------------
+    plot(omega ./ omega_new_k, A_delta_ratio_newk,'r--');
+    %---------------------------------------
     xlabel('\omega / \omega_{new}');
     ylabel('A_{\delta} / \delta_{set}');
     title('Amplitude Ratio vs. Frequency Ratio');
+    hold off
 
 
 
